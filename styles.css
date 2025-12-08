@@ -1,0 +1,478 @@
+:root {
+ --bg: #0a0a0a;
+ --bg-light: #1a1a1a;
+ --bg-card: #111;
+ --text: #ffffff;
+ --text-muted: #cccccc;
+    --red: #e00000;
+    --red-light: #ff2b2b;
+    --red-dark: #b30000;
+    --radius: 14px;
+    --border: #2a0a0a;
+    --transition: 0.25s ease;
+}
+/* ======== CONFIGURACIÓN GENERAL ======== */
+
+body {
+    margin: 0;
+    font-family: 'Segoe UI', sans-serif;
+    background: radial-gradient(circle at top, #210000, #0a0a0a);
+    color: var(--text);
+    overflow-x: hidden;
+}
+
+a {
+    color: var(--text);
+    text-decoration: none;
+}
+
+img {
+    width: 100%;
+    border-radius: var(--radius);
+}
+
+main.contenido {
+    width: 90%;
+    margin: 120px auto;
+    max-width: 1500px;
+}
+
+/* ======== HEADER ======== */
+
+header.header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    padding: 18px 60px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: rgba(5, 0, 0, 0.95);
+    backdrop-filter: blur(8px);
+    z-index: 1000;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.logo img {
+    width: 45px;
+    height: 45px;
+}
+
+.search input {
+    width: 340px;
+    padding: 12px 15px;
+    border-radius: 20px;
+    border: none;
+    background: #0f0f0f;
+    color: white;
+    outline: none;
+}
+
+.user-area {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.perfil-btn {
+    padding: 8px 20px;
+    border-radius: 20px;
+    border: none;
+    background: var(--bg-light);
+    color: white;
+}
+
+/* ======== VOLVER ======== */
+
+a.volver {
+    display: inline-block;
+    margin-bottom: 20px;
+    font-size: 15px;
+    color: var(--text-muted);
+}
+
+/* ======== BANNER DEL JUEGO ======== */
+
+.banner-juego {
+    position: relative;
+    width: 100%;
+    height: 290px;
+    overflow: hidden;
+    border-radius: var(--radius);
+}
+
+.banner-img {
+    width: 100%;
+    height: 290px;
+    object-fit: cover;
+    filter: brightness(0.7);
+}
+
+.banner-info {
+    position: absolute;
+    left: 30px;
+    bottom: 30px;
+}
+
+.banner-info h1 {
+    margin: 0;
+    font-size: 32px;
+}
+
+.banner-info p {
+    margin: 5px 0 0 0;
+    color: var(--text-muted);
+}
+
+.stats {
+    position: absolute;
+    right: 30px;
+    bottom: 30px;
+    display: flex;
+    gap: 30px;
+    font-size: 15px;
+    text-align: center;
+}
+
+.stats div strong {
+    font-size: 20px;
+}
+
+/* ======== PESTAÑAS ======== */
+
+.tabs {
+    margin-top: 30px;
+    display: flex;
+    gap: 10px;
+}
+
+.tab {
+    padding: 12px 28px;
+    background: #210000;
+    border-radius: var(--radius);
+    border: 1px solid #3a0a0a;
+    color: var(--text-muted);
+    cursor: pointer;
+    transition: .2s;
+}
+
+.tab.active,
+.tab:hover {
+    background: var(--red);
+    color: white;
+}
+
+/* ======== LAYOUT ======== */
+
+.layout {
+    display: grid;
+    grid-template-columns: 2.2fr 1fr;
+    gap: 30px;
+    margin-top: 20px;
+}
+
+/* ======== POSTS ======== */
+
+.posts .post {
+    display: flex;
+    gap: 15px;
+    padding: 20px;
+    background: rgba(20, 0, 0, 0.6);
+    border: 1px solid #3b0a0a;
+    border-radius: var(--radius);
+    margin-bottom: 20px;
+}
+
+.user-icon {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background: #333;
+}
+
+.post-content h4 {
+    margin: 0;
+    font-size: 15px;
+}
+
+.post-content p {
+    margin: 8px 0;
+    color: var(--text-muted);
+}
+
+.post-actions {
+    display: flex;
+    gap: 20px;
+    margin-top: 10px;
+    color: var(--text-muted);
+}
+
+/* ======== SIDEBAR ======== */
+
+.sidebar {
+    padding: 20px;
+    border-radius: var(--radius);
+    background: rgba(20, 0, 0, 0.6);
+    border: 1px solid #3b0a0a;
+}
+
+.sidebar h3 {
+    margin-top: 0;
+}
+
+.evento {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background-color: var(--bg-card);
+    padding: 8px 10px;
+    border-radius: var(--radius);
+    margin-bottom: 10px;
+}
+
+.evento-img {
+    width: 60px;
+    height: 60px;
+    border-radius: var(--radius);
+    overflow: hidden;
+    margin-right: 10px;
+    flex-shrink: 0;
+}
+
+.evento-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+/* ======================================================
+   RESPONSIVE — TABLETS
+   ====================================================== */
+@media (max-width: 992px) {
+
+    /* HEADER */
+    header.header {
+        padding: 15px 30px;
+        flex-wrap: wrap;
+        gap: 15px;
+    }
+
+    .search input {
+        width: 100%;
+        max-width: 500px;
+    }
+
+    main.contenido {
+        width: 94%;
+    }
+
+    /* LAYOUT CAMBIO A 1 COLUMNA */
+    .layout {
+        grid-template-columns: 1fr;
+    }
+
+    .sidebar {
+        margin-top: 20px;
+    }
+
+    /* POSTS */
+    .posts .post {
+        flex-direction: column;
+    }
+
+    .user-icon {
+        width: 42px;
+        height: 42px;
+    }
+
+    /* BANNER */
+    .banner-juego {
+        height: 240px;
+    }
+
+    .banner-img {
+        height: 240px;
+    }
+
+    .banner-info h1 {
+        font-size: 26px;
+    }
+
+    .stats {
+        right: 20px;
+        gap: 15px;
+    }
+}
+
+/* ======================================================
+   RESPONSIVE — CELULAR
+   ====================================================== */
+@media (max-width: 600px) {
+
+    /* HEADER */
+    header.header {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 15px 20px;
+    }
+
+    .logo img {
+        width: 38px;
+        height: 38px;
+    }
+
+    .search input {
+        width: 100%;
+    }
+
+    .user-area {
+        width: 100%;
+        justify-content: space-between;
+    }
+
+    /* BANNER */
+    .banner-juego {
+        height: 200px;
+    }
+
+    .banner-img {
+        height: 200px;
+    }
+
+    .banner-info {
+        left: 15px;
+        bottom: 15px;
+    }
+
+    .banner-info h1 {
+        font-size: 22px;
+    }
+
+    .stats {
+        position: static;
+        margin-top: 10px;
+        gap: 20px;
+        justify-content: flex-start;
+    }
+
+    /* TABS */
+    .tabs {
+        overflow-x: auto;
+        white-space: nowrap;
+        padding-bottom: 5px;
+    }
+
+    .tab {
+        padding: 10px 20px;
+        font-size: 14px;
+    }
+
+    /* POSTS */
+    .posts .post {
+        flex-direction: column;
+        padding: 15px;
+    }
+
+    .post-content p {
+        font-size: 0.9rem;
+    }
+
+    .post-actions {
+        font-size: 13px;
+    }
+
+    /* SIDEBAR */
+    .sidebar {
+        padding: 15px;
+    }
+
+    .evento {
+        flex-direction: row;
+        padding: 10px;
+    }
+
+    .evento-img {
+        width: 50px;
+        height: 50px;
+    }
+
+    .evento small {
+        font-size: 13px;
+    }
+
+    /* INPUT DE COMENTARIO */
+    .comment-input {
+        font-size: 0.85rem;
+        padding: 9px;
+    }
+
+    /* CONTENIDO PRINCIPAL */
+    main.contenido {
+        width: 92%;
+        margin: 100px auto;
+    }
+}
+
+/* ======================================================
+   PANTALLAS GRANDES (PC +1400px)
+   ====================================================== */
+@media (min-width: 1400px) {
+
+    main.contenido {
+        max-width: 1600px;
+    }
+
+    .banner-juego {
+        height: 330px;
+    }
+
+    .banner-img {
+        height: 330px;
+    }
+
+    .banner-info h1 {
+        font-size: 36px;
+    }
+
+    .layout {
+        gap: 40px;
+    }
+
+    .posts .post {
+        padding: 25px;
+    }
+
+    .sidebar {
+        padding: 25px;
+    }
+}
+.evento small {
+    color: var(--text-muted);
+}
+
+/* Input de comentario personalizado */
+.comment-input {
+  width: 100%;
+  padding: 10px;
+  margin-top: 8px;
+  border-radius: var(--radius);
+  border: 1px solid var(--red-light);
+  background-color: var(--bg-card);
+  color: var(--text);
+  font-size: 0.9rem;
+  transition: border-color var(--transition);
+}
+
+.comment-input::placeholder {
+  color: var(--text-muted);
+}
+
+.comment-input:focus {
+  outline: none;
+  border-color: var(--red);
+}
+

@@ -1,17 +1,3 @@
-// ======= DATOS INICIALES =======
-const defaultPosts = {
-  popular: [
-    { user: "HollowRunner", time: "18m", content: "La animación del ultimate de Ellen es una locura total 🔥❄️", likes: 530, comments: [{user:"Usuario1", text:"Increíble!!"}] },
-    { user: "ProxyZero", time: "1h", content: "El combate es tan fluido que me siento en un anime de acción 😎⚡", likes: 420, comments: [] }
-  ],
-  recientes: [
-    { user: "SpeedyGhost", time: "5m", content: "Nuevo evento Reto de Hollows está genial, ¿ya lo probaron?", likes: 150, comments: [] },
-    { user: "AgentX", time: "12m", content: "Los Agents nuevos tienen habilidades muy interesantes.", likes: 200, comments: [] }
-  ],
-  siguiendo: [
-    { user: "Z3nMaster", time: "30m", content: "Entrenando con mi equipo para el torneo semanal.", likes: 340, comments: [] }
-  ]
-};
 
 // Inicializar localStorage si no existe
 if (!localStorage.getItem('posts')) {
